@@ -1,0 +1,28 @@
+.span12
+  form.form-horizontal action='/offers' method='post'
+    fieldset
+      legend API Params
+
+      - if !@params_valid.nil? && !@params_valid
+        .error Please fill in fields marked in red
+
+      .control-group class='#{control_group_error_class(@uid_error)}'
+        label.control-label for='uid' uid
+        .controls
+          input.input-xlarge name='uid' type='text'
+          p.help-block eg. player1
+
+      .control-group class='#{control_group_error_class(@pub0_error)}'
+        label.control-label for='pub0' pub0
+        .controls
+          input name='pub0' type='text'
+          p.help-block eg. campaign2
+
+      .control-group class='#{control_group_error_class(@page_error)}'
+        label.control-label for='page' page
+        .controls
+          input name='page' type='text'
+          p.help-block eg. 2
+
+      .form-actions
+        input type='submit' value='Get offers' class='btn btn-primary'
